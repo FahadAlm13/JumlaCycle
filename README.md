@@ -1,5 +1,7 @@
 Name: Fahad Almusllam
+
 Phone Number: 0553030141
+
 Email: F.a.a.m900@gmail.com
 
 Linkedin: https: //www.linkedin.com/in/fahad-almusalam-a3b094286/
@@ -7,7 +9,9 @@ Linkedin: https: //www.linkedin.com/in/fahad-almusalam-a3b094286/
 
 Figma: https://www.figma.com/design/nNNGhTMIvFlT8xtPiU88oR/JumlaCycle?node-id=0-1&node-type=canvas&t=qiMcDpWnPrpH5chq-0
 
+
 Postman Documentation:https://documenter.getpostman.com/view/35088433/2sAXqqdNor
+
 
 Presentation: https://www.canva.com/design/DAGQ9ACUzlc/DtIgLE1HbMeTPNDzOfWo_w/edit?utm_content=DAGQ9ACUzlc&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
 
@@ -33,6 +37,8 @@ o	If rejected, the facility can wait for new offers from other suppliers.
 5.	Supplier Approves or Rejects Requests:
 o	Suppliers can review requests from facilities and either approve or reject them based on their ability to fulfill the order.
 o	This gives suppliers control over which requests they can accept based on stock or logistical capabilities.
+
+
 المنصة عبارة عن سوق مصمم لربط الموردين بالمنشئات والعملاء، مما يتيح إجراء معاملات بالجملة للمنتجات مع تعزيز الممارسات المستدامة من خلال إعادة التدوير. توفر المنصة حلاً مبسطًا للشراء والبيع بكميات كبيرة، مما يسمح للمنشئات والموردين بالتعامل مع الطلبات بالجملة وإدارة مفاوضات التسعير وتسهيل إعادة تدوير المواد.
 
 تدفق النظام:
