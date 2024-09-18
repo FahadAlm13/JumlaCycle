@@ -68,7 +68,7 @@ public class OrderService {
     //extra endpoint
     // this method change
     // extra 3
-    public void addNewOrder(Integer productId, Order order, Integer userId) {
+    public void addNewOrder(Integer userId ,  Order order, Integer productId) {
         // Find the user
         User user = authRepository.findUserById(userId);
         if (user == null) {
@@ -249,7 +249,7 @@ public class OrderService {
             discount=totalAmount-discount;
             return (int) discount;
         }else {
-            return 0;
+            return totalAmount;
         }
     }
 

@@ -82,11 +82,11 @@ public class ProductService {
 
     //search for products by product name
     // extra 8
-    public List<Product> searchProduct(String keyword) {
-        if (productRepository.findProductByProductName(keyword).isEmpty()){
+    public List<Product> searchProduct(String productName) {
+        if (productRepository.findProductByProductName(productName).isEmpty()){
             throw new ApiException("Product not found");
         }else {
-            return productRepository.findProductByProductName(keyword);
+            return productRepository.findProductByProductName(productName);
         }
     }
 

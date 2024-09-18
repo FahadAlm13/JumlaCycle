@@ -54,9 +54,9 @@ public class ProductController {
 
     //search product
     //this is new......
-    @GetMapping("/search-product/{keyWord}")
-    public ResponseEntity searchProduct(@PathVariable String keyWord) {
-        return ResponseEntity.status(200).body(productService.searchProduct(keyWord));
+    @GetMapping("/search-product")
+    public ResponseEntity searchProduct(@RequestParam String productName) {
+        return ResponseEntity.status(200).body(productService.searchProduct(productName));
     }
 
     // get the best-selling product for a supplier

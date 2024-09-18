@@ -32,13 +32,13 @@ public class OrderController {
     }
 
     @PostMapping("/add-order/{productId}")
-    public ResponseEntity addOrder(@PathVariable Integer productId, @Valid @RequestBody Order order, @AuthenticationPrincipal User user) {
-        orderService.addNewOrder(productId,order, user.getId());
+    public ResponseEntity addOrder( @AuthenticationPrincipal User user ,@Valid @RequestBody Order order,@PathVariable Integer productId) {
+        orderService.addNewOrder(user.getId() , order , productId);
         return ResponseEntity.status(200).body(new ApiResponse("order added successfully"));
     }
 
     @PutMapping("/update-by-userId/{orderId}")
-    public ResponseEntity updateOrderById(@Valid @RequestBody Order order, Integer orderId, @AuthenticationPrincipal User user) {
+    public ResponseEntity updateOrderById(@AuthenticationPrincipal User user , @Valid @RequestBody Order order,@PathVariable Integer orderId) {
         orderService.updateOrder(order, orderId, user.getId());
         return ResponseEntity.status(200).body(new ApiResponse("order updated successfully"));
     }

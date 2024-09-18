@@ -24,14 +24,14 @@ public class User implements UserDetails {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private  Integer id;
     @NotEmpty(message = "username cannot be empty")
-    @Column(columnDefinition = "varchar(50) not null unique")
+    @Column(columnDefinition = "varchar(100) not null unique")
     private String username;
     @NotBlank(message = "Name cannot be null")
-    @Size(min = 2, max = 20, message = "Name must be between 2 and 20 characters")
+    @Size(min = 2, max = 100, message = "Name must be between 2 and 20 characters")
     @Column(columnDefinition = "varchar(50) not null")
     private String name;
     @NotEmpty(message = "password cannot be empty")
-    @Column(columnDefinition = "varchar(100) not null unique")
+    @Column(columnDefinition = "varchar(300) not null ")
     private String password;
     @NotBlank(message = "Role cannot be null")
     @Pattern(regexp = "CUSTOMER|FACILITY|SUPPLIER|ADMIN", message = "Role must be either CUSTOMER, FACILITY, SUPPLIER or ADMIN")

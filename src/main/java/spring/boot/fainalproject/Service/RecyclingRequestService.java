@@ -23,7 +23,7 @@ public class RecyclingRequestService {
     private final PriceOfferRepository priceOfferRepository;
 
     // Get all recycling requests
-    public List<RecyclingRequest> getAllRecyclingRequests() {
+    public List<RecyclingRequest> getAllRecyclingRequests(Integer id) {
         return recyclingRequestRepository.findAll();
     }
 
@@ -116,7 +116,7 @@ public class RecyclingRequestService {
         recyclingRequestRepository.delete(recyclingRequest);
     }
     // This endpoint returns recycling requests that have no price offers yet.
-    public List<RecyclingRequest> getRecyclingRequestsWithNoPriceOffers() {
+    public List<RecyclingRequest> getRecyclingRequestsWithNoPriceOffers(Integer userId) {
         return recyclingRequestRepository.findRecyclingRequestsWithNoPriceOffers();
     }
 

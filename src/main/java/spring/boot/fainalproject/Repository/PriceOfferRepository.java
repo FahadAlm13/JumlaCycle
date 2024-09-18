@@ -27,4 +27,7 @@ public interface PriceOfferRepository extends JpaRepository<PriceOffer, Integer>
     @Query("SELECT po FROM PriceOffer po WHERE po.recyclingRequest.facility_recycle.id = :facilityId AND po.status = 'PENDING'")
     List<PriceOffer> findPendingOffersByFacilityId(@Param("facilityId") Integer facilityId);
 
+    List<PriceOffer> findBySupplier(Supplier supplier);
+
+
 }

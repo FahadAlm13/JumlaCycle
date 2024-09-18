@@ -22,8 +22,8 @@ public class RecyclingRequest {
     private Integer id;
 
     @NotBlank(message = "product Name cannot be null")
-    @Size(min = 3, max = 20, message = " product Name must be between 2 and 20 characters")
-    @Column(columnDefinition = "varchar(20) not null")
+    @Size(min = 3, max = 50, message = " product Name must be between 2 and 20 characters")
+    @Column(columnDefinition = "varchar(50) not null")
     private String productName;
 
     @NotNull(message = " quantity cannot be null" )
@@ -44,7 +44,6 @@ public class RecyclingRequest {
     private Supplier supplier_recycle;
 
     @OneToMany(mappedBy = "recyclingRequest", cascade = CascadeType.ALL)
-    @JsonIgnore
     private Set<PriceOffer> priceOffers = new HashSet<>();
 
 

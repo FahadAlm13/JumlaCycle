@@ -18,6 +18,7 @@ public class SupplierService {
     private final AuthRepository authRepository;
     private final OfferRepository offerRepository;
     private final FacilityRequestRepository facilityRequestRepository;
+    private final PriceOfferRepository priceOfferRepository;
 
     public List<Supplier> getAllSuppliers() {
         return supplierRepository.findAll();
@@ -98,11 +99,11 @@ public class SupplierService {
 //        offerRepository.save(offer);
 
         // Reject all other offers for this request
-        List<Offer> otherOffers = offerRepository.findByFacilityRequestAndStatusNot(facilityRequest, "APPROVED");
-        for (Offer otherOffer : otherOffers) {
-            otherOffer.setStatus("REJECTED");
-            offerRepository.save(otherOffer);
-        }
+//        List<Offer> otherOffers = offerRepository.findByFacilityRequestAndStatusNot(facilityRequest, "APPROVED");
+//        for (Offer otherOffer : otherOffers) {
+//            otherOffer.setStatus("REJECTED");
+//            offerRepository.save(otherOffer);
+//        }
     }
 
     // Method for rejecting a FacilityRequest
@@ -130,6 +131,13 @@ public class SupplierService {
     // This endpoint lets you dynamically filter suppliers based on their badge (e.g., IRON, BRONZE, SILVER, GOLD).
     public List<Supplier> getSuppliersByBadge(String badge) {
         return supplierRepository.findSuppliersByBadge(badge);
+    }
+
+    public List<PriceOffer> getAllPriceOfferMadeBySupplier(Integer userId) {
+        Supplier supplier = supplierRepository.findSupplierById(userId);
+        List<PriceOffer> priceOffers = priceOfferRepository.findBySupplier(supplier);
+        return priceOffers;
+
     }
 
 }

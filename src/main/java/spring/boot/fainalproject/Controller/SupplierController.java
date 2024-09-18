@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import spring.boot.fainalproject.API.ApiResponse;
 import spring.boot.fainalproject.DTO.SupplierDTO;
 import spring.boot.fainalproject.Model.Offer;
+import spring.boot.fainalproject.Model.PriceOffer;
 import spring.boot.fainalproject.Model.Supplier;
 import spring.boot.fainalproject.Model.User;
 import spring.boot.fainalproject.Service.SupplierService;
@@ -68,5 +69,10 @@ public class SupplierController {
     public ResponseEntity<List<Supplier>> getSuppliersByBadge(@AuthenticationPrincipal User user, @PathVariable String badge) {
         List<Supplier> suppliers = supplierService.getSuppliersByBadge(badge);
         return ResponseEntity.status(200).body(suppliers);
+    }
+    @GetMapping("/get-my-price-offer")
+    public ResponseEntity getAllPriceOfferMadeBySupplier(@AuthenticationPrincipal User user) {
+        List<PriceOffer> priceOffers=supplierService.getAllPriceOfferMadeBySupplier(user.getId());
+        return ResponseEntity.status(200).body(priceOffers);
     }
 }

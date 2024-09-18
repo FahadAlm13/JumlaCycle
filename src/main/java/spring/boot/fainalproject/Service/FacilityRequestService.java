@@ -57,7 +57,7 @@ public class FacilityRequestService {
 
         facilityRequestRepository.save(facilityRequest1);
     }
-    public void cancelFacilityRequest(Integer facilityRequestId, Integer userId) {
+    public void cancelFacilityRequest(Integer userId, Integer facilityRequestId) {
         FacilityRequest facilityRequest = facilityRequestRepository.findFacilityRequestById(facilityRequestId);
 
         if (facilityRequest == null) {

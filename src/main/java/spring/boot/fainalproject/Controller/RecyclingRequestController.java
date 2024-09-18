@@ -22,7 +22,7 @@ public class RecyclingRequestController {
 
     @GetMapping("/get-all-recycling-requests")
     public ResponseEntity getAllRecyclingRequests(@AuthenticationPrincipal User user) {
-        return ResponseEntity.status(200).body(recyclingRequestService.getAllRecyclingRequests());
+        return ResponseEntity.status(200).body(recyclingRequestService.getAllRecyclingRequests(user.getId()));
     }
 
     @GetMapping("/get-recycling-request-by-id/{id}")
@@ -54,7 +54,7 @@ public class RecyclingRequestController {
     }
     @GetMapping("/no-price-offers")
     public ResponseEntity<List<RecyclingRequest>> getRecyclingRequestsWithNoPriceOffers(@AuthenticationPrincipal User user) {
-        List<RecyclingRequest> requests = recyclingRequestService.getRecyclingRequestsWithNoPriceOffers();
+        List<RecyclingRequest> requests = recyclingRequestService.getRecyclingRequestsWithNoPriceOffers(user.getId());
         return ResponseEntity.status(200).body(requests);
     }
 

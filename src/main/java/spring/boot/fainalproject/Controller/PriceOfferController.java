@@ -18,7 +18,7 @@ import java.util.List;
 public class PriceOfferController {
     private final PriceOfferService priceOfferService;
 
-    @GetMapping("/get-all-priceOffers")
+    @GetMapping("/get-all-price-offers")
     public ResponseEntity getAllPriceOffers(@AuthenticationPrincipal User user) {
         return ResponseEntity.status(200).body(priceOfferService.getAllPriceOffers());
     }

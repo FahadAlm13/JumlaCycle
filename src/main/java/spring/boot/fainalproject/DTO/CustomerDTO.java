@@ -13,7 +13,7 @@ public class CustomerDTO {
     private String username;
 
     @NotBlank(message = "Name cannot be null")
-    @Size(min = 2, max = 20, message = "Name must be between 2 and 20 characters")
+    @Size(min = 2, max = 100, message = "Name must be between 2 and 20 characters")
     private String name;
 
     @NotEmpty(message = "password cannot be empty")

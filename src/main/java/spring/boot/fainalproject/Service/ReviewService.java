@@ -25,24 +25,26 @@ public class ReviewService {
     }
 
     public void addReviewForProduct(Integer orderId, Review review, Integer userId) {
-        Customer customer=customerRepository.findCustomerById(userId);
-        Order order=orderRepository.findOrderById(orderId);
-        Facility facility=facilityRepository.findFacilityById(userId);
-        if (order==null) {
+        Customer customer = customerRepository.findCustomerById(userId);
+        Order order = orderRepository.findOrderById(orderId);
+        Facility facility = facilityRepository.findFacilityById(userId);
+
+        if (order == null) {
             throw new ApiException("Order not found to add review for product");
         }
 
-        if (order.getOrderStatus().equals("Shipped")){
-            if (order.getCustomer_orders().getId()==customer.getId()) {
+        if (order.getOrderStatus().equals("Shipped")) {
+            if (order.getCustomer_orders() != null && order.getCustomer_orders().getId() == customer.getId()) {
                 review.setCustomer(customer);
             }
-            if (order.getFacility_orders().getId()==facility.getId()) {
+
+            if (order.getFacility_orders() != null && order.getFacility_orders().getId() == facility.getId()) {
                 review.setFacility(facility);
             }
 
             reviewRepository.save(review);
-        }else {
-            throw new ApiException("Your order most be shipped to add review");
+        } else {
+            throw new ApiException("Your order must be shipped to add a review");
         }
     }
 

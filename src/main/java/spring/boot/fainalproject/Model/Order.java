@@ -35,8 +35,7 @@ public class Order {
     @Positive(message = "Enter positive number")
     private int quantity;
 
-    @NotNull(message = "Total amount can not be null")
-    @Column(columnDefinition = "double not null")
+    @Column(columnDefinition = "double ")
     private double totalAmount;
 
     @Column(columnDefinition = "enum('Standard','Priority','Express')")
