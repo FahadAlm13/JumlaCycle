@@ -60,37 +60,51 @@ o	يمكن للموردين مراجعة الطلبات من المنشآت وي
 o	يمنح ذلك الموردين السيطرة على الطلبات التي يمكنهم قبولها بناءً على المخزون أو القدرات اللوجستية.
 
 My work:
+
 Models :
-	Supplier + Supplier DTO
+
+Supplier + Supplier DTO
 Recycle request 
 Price offer
+
 Repositiry :
-	Supplier
-Recycle request 
-Price offer 
-Did All service :
-	My User Detalis 
+
 Supplier
 Recycle request 
 Price offer 
-Controller:
-	Supplier
+
+Did All service :
+
+My User Detalis 
+Supplier
 Recycle request 
 Price offer 
+
+Controller:
+Supplier
+Recycle request 
+Price offer 
+
 Controller Advice :
-	HttpRequestMethodNotSupported
+
+HttpRequestMethodNotSupported
 HttpMessageNotReadbul 
 MethodArgument 
+
 Junit test :
 	
 Repository :
 FindCustomerById 
+
 Service :
+
 addProductSupplierNotFoundTest
 deleteProductNotAccessTest
 getAllOrderTest_NoOrders 
 getAllOrderTest_CustomerOrders 
+
 Controller : 
+
 TestGetAllProducts
 
 
